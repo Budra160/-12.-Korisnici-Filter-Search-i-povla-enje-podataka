@@ -8,8 +8,12 @@ export async function getKorisnici(){
             throw new Error('API se nije uspio dohvatiti');
 
         const data = await response.json();
-
-        return data;
+        
+        let niz = [];
+        data.forEach(element =>{
+            niz.push(element);
+        })
+        return niz;
 
     }
     catch(err){
@@ -17,3 +21,5 @@ export async function getKorisnici(){
 
     }
 }
+
+
